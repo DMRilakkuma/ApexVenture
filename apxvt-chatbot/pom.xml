@@ -20,8 +20,8 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.pydance</groupId>
-            <artifactId>pyd-common</artifactId>
+            <groupId>com.apxvt</groupId>
+            <artifactId>apxvt-common</artifactId>
         </dependency>
 
 

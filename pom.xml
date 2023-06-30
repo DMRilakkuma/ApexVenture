@@ -67,8 +67,8 @@
             </dependency>
 
             <dependency>
-                <groupId>com.pydance</groupId>
-                <artifactId>pyd-common</artifactId>
+                <groupId>com.apxvt</groupId>
+                <artifactId>apxvt-common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 

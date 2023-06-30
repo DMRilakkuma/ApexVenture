@@ -39,7 +39,7 @@ public class LogAspect {
     /**
      * 定义一个切点
      */
-    @Pointcut("execution(public * com.pydance..*Controller.*(..))")
+    @Pointcut("execution(public * com.apxvt..*Controller.*(..))")
     public void controllerPointcut() {
     }
 

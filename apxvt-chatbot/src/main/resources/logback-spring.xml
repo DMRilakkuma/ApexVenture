@@ -85,7 +85,7 @@
     </logger>
 
     <!--mybatis拦截器配置，没有拦截器可以删除这个模块-->
-    <logger name="com.pydance.common.interceptor.SqlLoggerInterceptor" level="TRACE">
+    <logger name="com.apxvt.common.interceptor.SqlLoggerInterceptor" level="TRACE">
     </logger>
 
 </configuration>

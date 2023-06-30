@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 
-@ComponentScan("com.pydance")
-@MapperScan("com.pydance.chatbot.mapper")
+@ComponentScan("com.apxvt")
+@MapperScan("com.apxvt.chatbot.mapper")
 @SpringBootApplication
 public class ChatBotApplication {
     private static final Logger LOG = LoggerFactory.getLogger(ChatBotApplication.class);

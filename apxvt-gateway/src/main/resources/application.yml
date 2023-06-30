@@ -4,12 +4,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: pyd-chatbot
+        - id: apxvt-chatbot
           uri: lb://chatbot
           predicates:
             - Path=/chatbot/**
 
-        - id: pyd-oauth2
+        - id: apxvt-oauth2
           uri: lb://oauth
           predicates:
             - Path=/oauth/**
