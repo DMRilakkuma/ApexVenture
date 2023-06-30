@@ -24,6 +24,7 @@
     <name>ApexVenture</name>
     <description>ApexVenture</description>
 
+
     <properties>
         <java.version>17</java.version>
         <nacos.server-addr>127.0.0.1:8848</nacos.server-addr>
