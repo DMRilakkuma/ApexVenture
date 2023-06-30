@@ -26,3 +26,6 @@ gen
 rebel.xml
 /logs
 .fastRequest
+.mvn
+mvnw
+mvnw.cmd
