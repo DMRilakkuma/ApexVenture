@@ -1,0 +1,31 @@
+server:
+  port: 8501
+  servlet:
+    context-path: /chatbot    # 服务路径/前缀
+
+spring:
+  application:
+    name: chatbot
+  profiles:
+    active: @profiles.active@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: @nacos.server-addr@
+        username: @nacos.username@
+        password: @nacos.password@
+        namespace: @nacos.namespace@
+        group: @nacos.group@
+      config:
+        server-addr: @nacos.server-addr@
+        username: @nacos.username@
+        password: @nacos.password@
+        namespace: @nacos.namespace@
+        group: @nacos.group@
+        file-extension: yml
+
+
+
+
+
+

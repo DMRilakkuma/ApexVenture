@@ -1,0 +1,15 @@
+server:
+  port: 8002
+#spring:
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          github:
+#            clientId: f4883dc4682cdba14d91
+#            clientSecret: 909b237528fb499086cd9466dcc575463363aa89
+
+# sa-token配置
+sa-token:
+    # token名称 (同时也是cookie名称)
+    token-name: satoken-client
