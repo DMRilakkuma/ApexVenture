@@ -2,7 +2,7 @@ package com.apxvt.chatbot.controller;
 
 
 import com.apxvt.chatbot.mapper.UserMapper;
-import com.pydance.common.response.Result;
+import com.apxvt.common.response.Result;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
