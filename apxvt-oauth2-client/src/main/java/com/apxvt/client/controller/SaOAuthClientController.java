@@ -12,29 +12,43 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 /**
- * Sa-OAuth2 Client端 控制器 
- * @author click33 
+ * Sa-OAuth2 Client端 控制器
+ *
+ * @author click33
  */
 @RestController
 public class SaOAuthClientController {
 
 	// 相关参数配置 
-	private String clientId = "f4883dc4682cdba14d91";								// 应用id
-	private String clientSecret = "909b237528fb499086cd9466dcc575463363aa89";		// 应用秘钥
-	private String serverUrl = "http://chat.pydance.cn/";	// 服务端接口
-	
+	private String clientId = "f4883dc4682cdba14d91";                                // 应用id
+	private String clientSecret = "909b237528fb499086cd9466dcc575463363aa89";        // 应用秘钥
+	private String serverUrl = "https://github.com/login";    // 服务端接口
+
 	// 进入首页 
 	@RequestMapping("/")
 	public Object index(HttpServletRequest request) {
 		request.setAttribute("uid", StpUtil.getLoginIdDefaultNull());
 		return new ModelAndView("index.html");
 	}
-	
+
+	@RequestMapping("/login")
+	public Object login(HttpServletRequest request) {
+		// 调用Server端接口，获取 Access-Token 以及其他信息 
+		String str = OkHttps.sync(serverUrl + "/oauth/authorize?client_id" + "=" + clientId)
+				.get()
+				.getBody()
+				.toString();
+		System.err.println(str);
+		SoMap so = SoMap.getSoMap().setJsonString(str);
+		System.out.println("返回结果: " + so);
+		return new ModelAndView("redirect:" + so.getString("data"));
+	}
+
 	// 根据Code码进行登录，获取 Access-Token 和 openid  
 	@RequestMapping("/codeLogin")
 	public SaResult codeLogin(String code) {
 		// 调用Server端接口，获取 Access-Token 以及其他信息 
-		String str = OkHttps.sync(serverUrl + "/oauth2/token")
+		String str = OkHttps.sync(serverUrl + "/oauth/access_token")
 				.addBodyPara("grant_type", "authorization_code")
 				.addBodyPara("code", code)
 				.addBodyPara("client_id", clientId)
@@ -42,11 +56,12 @@ public class SaOAuthClientController {
 				.post()
 				.getBody()
 				.toString();
+		System.out.println(str);
 		SoMap so = SoMap.getSoMap().setJsonString(str);
 		System.out.println("返回结果: " + so);
-		
+
 		// code不等于200  代表请求失败 
-		if(so.getInt("code") != 200) {
+		if (so.getInt("code") != 200) {
 			return SaResult.error(so.getString("msg"));
 		}
 
@@ -54,12 +69,12 @@ public class SaOAuthClientController {
 		SoMap data = so.getMap("data");
 		long uid = getUserIdByOpenid(data.getString("openid"));
 		data.set("uid", uid);
-		
+
 		// 返回相关参数 
 		StpUtil.login(uid);
 		return SaResult.data(data);
 	}
-	
+
 	// 根据 Refresh-Token 去刷新 Access-Token 
 	@RequestMapping("/refresh")
 	public SaResult refresh(String refreshToken) {
@@ -74,9 +89,9 @@ public class SaOAuthClientController {
 				.toString();
 		SoMap so = SoMap.getSoMap().setJsonString(str);
 		System.out.println("返回结果: " + so);
-		
+
 		// code不等于200  代表请求失败 
-		if(so.getInt("code") != 200) {
+		if (so.getInt("code") != 200) {
 			return SaResult.error(so.getString("msg"));
 		}
 
@@ -84,7 +99,7 @@ public class SaOAuthClientController {
 		SoMap data = so.getMap("data");
 		return SaResult.data(data);
 	}
-	
+
 	// 模式三：密码式-授权登录
 	@RequestMapping("/passwordLogin")
 	public SaResult passwordLogin(String username, String password) {
@@ -100,9 +115,9 @@ public class SaOAuthClientController {
 				.toString();
 		SoMap so = SoMap.getSoMap().setJsonString(str);
 		System.out.println("返回结果: " + so);
-		
+
 		// code不等于200  代表请求失败 
-		if(so.getInt("code") != 200) {
+		if (so.getInt("code") != 200) {
 			return SaResult.error(so.getString("msg"));
 		}
 
@@ -110,12 +125,12 @@ public class SaOAuthClientController {
 		SoMap data = so.getMap("data");
 		long uid = getUserIdByOpenid(data.getString("openid"));
 		data.set("uid", uid);
-		
+
 		// 返回相关参数 
 		StpUtil.login(uid);
 		return SaResult.data(data);
 	}
-	
+
 	// 模式四：获取应用的 Client-Token 
 	@RequestMapping("/clientToken")
 	public SaResult clientToken() {
@@ -129,9 +144,9 @@ public class SaOAuthClientController {
 				.toString();
 		SoMap so = SoMap.getSoMap().setJsonString(str);
 		System.out.println("返回结果: " + so);
-		
+
 		// code不等于200  代表请求失败 
-		if(so.getInt("code") != 200) {
+		if (so.getInt("code") != 200) {
 			return SaResult.error(so.getString("msg"));
 		}
 
@@ -139,7 +154,7 @@ public class SaOAuthClientController {
 		SoMap data = so.getMap("data");
 		return SaResult.data(data);
 	}
-	
+
 	// 注销登录 
 	@RequestMapping("/logout")
 	public SaResult logout() {
@@ -158,9 +173,9 @@ public class SaOAuthClientController {
 				.toString();
 		SoMap so = SoMap.getSoMap().setJsonString(str);
 		System.out.println("返回结果: " + so);
-		
+
 		// code不等于200  代表请求失败 
-		if(so.getInt("code") != 200) {
+		if (so.getInt("code") != 200) {
 			return SaResult.error(so.getString("msg"));
 		}
 
@@ -168,20 +183,20 @@ public class SaOAuthClientController {
 		SoMap data = so.getMap("data");
 		return SaResult.data(data);
 	}
-	
+
 	// 全局异常拦截 
 	@ExceptionHandler
 	public SaResult handlerException(Exception e) {
-		e.printStackTrace(); 
+		e.printStackTrace();
 		return SaResult.error(e.getMessage());
 	}
 
-	
+
 	// ------------ 模拟方法 ------------------ 
 	// 模拟方法：根据openid获取userId 
 	private long getUserIdByOpenid(String openid) {
 		// 此方法仅做模拟，实际开发要根据具体业务逻辑来获取userId
 		return 10001;
 	}
-	
+
 }
