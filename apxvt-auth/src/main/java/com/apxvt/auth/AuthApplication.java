@@ -1,4 +1,4 @@
-package com.apxvt.chatbot;
+package com.apxvt.auth;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
@@ -14,11 +14,11 @@ import java.net.UnknownHostException;
 @ComponentScan("com.apxvt")
 @MapperScan("com.apxvt.*.mapper")
 @SpringBootApplication
-public class ChatBotApplication {
-	private static final Logger LOG = LoggerFactory.getLogger(ChatBotApplication.class);
+public class AuthApplication {
+	private static final Logger LOG = LoggerFactory.getLogger(AuthApplication.class);
 
 	public static void main(String[] args) throws UnknownHostException {
-		SpringApplication app = new SpringApplication(ChatBotApplication.class);
+		SpringApplication app = new SpringApplication(AuthApplication.class);
 		Environment env = app.run(args).getEnvironment();
 		String IP = InetAddress.getLocalHost().getHostAddress();
 		LOG.info("启动成功！！");

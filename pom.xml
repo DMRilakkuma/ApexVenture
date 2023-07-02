@@ -9,6 +9,7 @@
         <module>apxvt-gateway</module>
         <module>apxvt-oauth2-server</module>
         <module>apxvt-oauth2-client</module>
+        <module>apxvt-auth</module>
     </modules>
 
     <parent>

@@ -1,0 +1,14 @@
+server:
+  port: 8503
+  servlet:
+    context-path: /auth    # 服务路径/前缀
+
+spring:
+  profiles:
+    active: dev
+  # 数据库连接
+  datasource:
+    url: jdbc:mysql://101.34.205.159:3306/apxvt?characterEncoding=utf-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver

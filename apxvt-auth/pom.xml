@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>apxvt-chatbot</artifactId>
+    <artifactId>apxvt-auth</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,31 +18,10 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>com.apxvt</groupId>
             <artifactId>apxvt-common</artifactId>
         </dependency>
-
-        <!--热部署-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>compile</scope>
-        </dependency>
-
     </dependencies>
+
 </project>

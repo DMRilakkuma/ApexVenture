@@ -1,6 +1,6 @@
 spring:
   application:
-    name: chatbot
+    name: auth
   profiles:
     active: @profiles.active@
   cloud:
