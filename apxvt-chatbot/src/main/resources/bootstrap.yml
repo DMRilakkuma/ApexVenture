@@ -6,13 +6,13 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: @nacos.server-addr@
+        server-addr: @IP@:8848
         username: @nacos.username@
         password: @nacos.password@
         namespace: @nacos.namespace@
         group: @nacos.group@
       config:
-        server-addr: @nacos.server-addr@
+        server-addr: 101.34.205.159:8848
         username: @nacos.username@
         password: @nacos.password@
         namespace: @nacos.namespace@

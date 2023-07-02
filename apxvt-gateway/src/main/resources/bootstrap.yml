@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: @nacos.server-addr@
+        server-addr: @IP@:8848
         username: @nacos.username@
         password: @nacos.password@
         namespace: @nacos.namespace@
