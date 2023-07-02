@@ -1,8 +1,3 @@
-server:
-  port: 8501
-  servlet:
-    context-path: /chatbot    # 服务路径/前缀
-
 spring:
   application:
     name: chatbot
