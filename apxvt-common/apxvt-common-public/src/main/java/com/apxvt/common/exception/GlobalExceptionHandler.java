@@ -15,7 +15,7 @@ package com.apxvt.common.exception;
  * @version 1.0
  */
 
-import com.apxvt.common.response.Result;
+import com.apxvt.api.response.Result;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

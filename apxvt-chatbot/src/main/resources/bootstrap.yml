@@ -18,9 +18,6 @@ spring:
         namespace: @nacos.namespace@
         group: @nacos.group@
         file-extension: yml
-
-
-
-
-
-
+        shared-configs:
+          - data-id: common-dev.yml
+            group: ApexVenture

@@ -1,8 +1,8 @@
 package com.apxvt.chatbot.controller;
 
 
+import com.apxvt.api.response.Result;
 import com.apxvt.chatbot.mapper.UserMapper;
-import com.apxvt.common.response.Result;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
@@ -26,7 +26,7 @@ public class TestController {
     @GetMapping("/hello/id")
     public Result<String> hello(@Param("id") String id) {
         userMapper.selectUserId();
-        return Result.ok("hello world" + id);
+        return Result.success("hello world" + id);
     }
 
 }

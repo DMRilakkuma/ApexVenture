@@ -6,7 +6,7 @@
  */
 package com.apxvt.common.exception;
 
-import com.apxvt.common.response.ResultEnum;
+import com.apxvt.api.response.ResultEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

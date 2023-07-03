@@ -32,10 +32,26 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-         <!--springboot web-->
+        <!--springboot aop-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.apxvt</groupId>
+            <artifactId>apxvt-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
         </dependency>
 
         <!--lombox-->
@@ -49,7 +65,7 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
-         <!--nacos配置中心-->
+        <!--nacos配置中心-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
@@ -90,7 +106,7 @@
             <artifactId>springdoc-openapi-ui</artifactId>
         </dependency>
 
-         <!--lombok-->
+        <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

@@ -14,6 +14,11 @@ spring:
           predicates:
             - Path=/oauth/**
 
+        - id: apxvt-auth
+          uri: lb://auth
+          predicates:
+            - Path=/auth/**
+
 
 #swagger
 knife4j:

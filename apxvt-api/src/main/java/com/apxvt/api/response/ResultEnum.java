@@ -4,7 +4,7 @@
  * @className com.jiawa.train.common.response.ResultEnum
  * @copyright Copyright 2020 Thunisoft, Inc All rights reserved.
  */
-package com.apxvt.common.response;
+package com.apxvt.api.response;
 
 /**
  * ResultEnum

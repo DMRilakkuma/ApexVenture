@@ -17,6 +17,5 @@ import java.util.List;
  */
 public interface UserMapper {
 
-
     List<Integer> selectUserId();
 }

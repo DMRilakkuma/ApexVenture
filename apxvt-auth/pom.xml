@@ -18,6 +18,12 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.apxvt</groupId>
+            <artifactId>apxvt-api</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.apxvt</groupId>
             <artifactId>apxvt-common-public</artifactId>

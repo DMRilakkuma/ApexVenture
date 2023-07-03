@@ -18,7 +18,7 @@
     </properties>
 
     <dependencies>
-          <!-- Sa-Token 权限认证, 在线文档：https://sa-token.cc -->
+        <!-- Sa-Token 权限认证, 在线文档：https://sa-token.cc -->
         <dependency>
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-spring-boot3-starter</artifactId>
@@ -33,6 +33,17 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.apxvt</groupId>
+            <artifactId>apxvt-common-mybatis</artifactId>
+        </dependency>
+
+        <!--lombox-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 

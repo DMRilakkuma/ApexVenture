@@ -4,7 +4,7 @@
  * @className com.jiawa.train.common.response.Result
  * @copyright Copyright 2020 Thunisoft, Inc All rights reserved.
  */
-package com.apxvt.common.response;
+package com.apxvt.api.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -75,15 +75,15 @@ public class Result<T> implements Serializable {
         this.success = false;
     }
 
-    public static <T> Result<T> ok() {
+    public static <T> Result<T> success() {
         return new Result<>(ResultEnum.OK);
     }
 
-    public static <T> Result<T> ok(T data) {
+    public static <T> Result<T> success(T data) {
         return new Result<>(ResultEnum.OK, data);
     }
 
-    public static <T> Result<List<T>> ok(List<T> data) {
+    public static <T> Result<List<T>> success(List<T> data) {
         return new Result<>(ResultEnum.OK, data);
     }
 
