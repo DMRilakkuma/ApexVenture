@@ -69,8 +69,32 @@
 
             <dependency>
                 <groupId>com.apxvt</groupId>
-                <artifactId>apxvt-common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <artifactId>apxvt-common-public</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.apxvt</groupId>
+                <artifactId>apxvt-common-log</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.apxvt</groupId>
+                <artifactId>apxvt-common-public</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.apxvt</groupId>
+                <artifactId>apxvt-common-mybatis</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.apxvt</groupId>
+                <artifactId>apxvt-common-satoken</artifactId>
+                <version>${version}</version>
             </dependency>
 
             <!--集成mybatis-->

@@ -21,7 +21,22 @@
 
         <dependency>
             <groupId>com.apxvt</groupId>
-            <artifactId>apxvt-common</artifactId>
+            <artifactId>apxvt-common-public</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.apxvt</groupId>
+            <artifactId>apxvt-common-log</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.apxvt</groupId>
+            <artifactId>apxvt-common-mybatis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.apxvt</groupId>
+            <artifactId>apxvt-common-satoken</artifactId>
         </dependency>
 
         <!--热部署-->

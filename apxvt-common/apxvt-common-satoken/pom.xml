@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.apxvt</groupId>
-        <artifactId>ApexVenture</artifactId>
+        <artifactId>apxvt-common</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>apxvt-auth</artifactId>
+    <artifactId>apxvt-common-satoken</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,24 +18,21 @@
     </properties>
 
     <dependencies>
+          <!-- Sa-Token 权限认证, 在线文档：https://sa-token.cc -->
         <dependency>
-            <groupId>com.apxvt</groupId>
-            <artifactId>apxvt-common-public</artifactId>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-spring-boot3-starter</artifactId>
+        </dependency>
+
+        <!-- Sa-Token 整合 Redis （使用 jackson 序列化方式） -->
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-redis-jackson</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.apxvt</groupId>
-            <artifactId>apxvt-common-log</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.apxvt</groupId>
-            <artifactId>apxvt-common-mybatis</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.apxvt</groupId>
-            <artifactId>apxvt-common-satoken</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
         </dependency>
     </dependencies>
 
